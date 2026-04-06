@@ -9,7 +9,13 @@
 
 <body>
 
-  <h1 class="he"> زانا و فیزیازانێن مێژووی</h1>
+<h1 class="he"> زانا و فیزیازانێن مێژووی</h1>
+
+<!-- SEARCH -->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="🔍ناڤێ زانای ..." onkeyup="searchScientist(); showSuggestions()">
+  <div id="suggestions"></div>
+</div>
 
 <button class="toggle-btn" onclick="toggleDark()">🌙</button>
 
@@ -17,36 +23,91 @@
 
   <div class="box">
     <a href="en.html">
-      <img title="اسطورە" src="images/e.jpg" alt="Einstein">
+      <div class="img-wrapper">
+        <img src="images/e.jpg">
+        <div class="overlay">تیۆریا ڕێژەیی</div>
+      </div>
     </a>
     <p class="pi"> ئەلبێرت ئەنیشتاین </p>
   </div>
 
   <div class="box">
     <a href="ne.html">
-      <img src="images/new.jpg" alt="Newton">
+      <div class="img-wrapper">
+        <img src="images/new.jpg">
+        <div class="overlay">یاسایێن لڤینێ </div>
+      </div>
     </a>
     <p class="pi">ئیسحاق نیوتن </p>
   </div>
 
   <div class="box">
     <a href="zhe.html">
-      <img src="images/zhee.png" alt="Newton">
+      <div class="img-wrapper">
+        <img src="images/zhee.png">
+        <div class="overlay">زانیاری داهاتوو</div>
+      </div>
     </a>
     <p class="pi"> ژێهات </p>
   </div>
 
   <div class="box">
     <a href="je.html">
-      <img src="images/je.jpg" alt="Newton">
+      <div class="img-wrapper">
+        <img src="images/je.jpg">
+        <div class="overlay">بەزودی</div>
+      </div>
     </a>
-    <p class="pi"> ژیر  </p>
+    <p class="pi"> ژیر </p>
   </div>
 
 </div>
+
 <script>
 function toggleDark() {
   document.body.classList.toggle("dark");
+}
+
+/* FILTER CARDS */
+function searchScientist() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.querySelectorAll(".box");
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+
+/* SUGGESTIONS */
+const data = [
+  {name: "ئەنیشتاین", link: "en.html"},
+  {name: "نیوتن", link: "ne.html"},
+  {name: "ژێهات", link: "zhe.html"},
+  {name: "ژیر", link: "je.html"}
+];
+
+function showSuggestions() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let box = document.getElementById("suggestions");
+
+  box.innerHTML = "";
+
+  if (input === "") return;
+
+  data.forEach(item => {
+    if (item.name.toLowerCase().includes(input)) {
+      let div = document.createElement("div");
+      div.classList.add("suggest-item");
+      div.innerText = item.name;
+
+      div.onclick = () => {
+        window.location.href = item.link;
+      };
+
+      box.appendChild(div);
+    }
+  });
 }
 </script>
 
