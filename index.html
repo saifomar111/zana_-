@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زانا</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زانستی</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-   <div class="img-container">
-    <div class="box">
+  <h1 class="he"> زانا و فیزیازانێن مێژووی</h1>
 
-    <a href="en.html"> <img src="images/e.jpg" ></a> 
-    <p class="pi"> ئەنیشتاین </p>
+<button class="toggle-btn" onclick="toggleDark()">🌙</button>
+
+<div class="img-container">
+
+  <div class="box">
+    <a href="en.html">
+      <img title="اسطورە" src="images/e.jpg" alt="Einstein">
+    </a>
+    <p class="pi"> ئەلبێرت ئەنیشتاین </p>
+  </div>
+
+  <div class="box">
+    <a href="ne.html">
+      <img src="images/new.jpg" alt="Newton">
+    </a>
+    <p class="pi">ئیسحاق نیوتن </p>
+  </div>
+
+  <div class="box">
+    <a href="zhe.html">
+      <img src="images/zhee.png" alt="Newton">
+    </a>
+    <p class="pi"> ژێهات </p>
+  </div>
+
+  <div class="box">
+    <a href="je.html">
+      <img src="images/je.jpg" alt="Newton">
+    </a>
+    <p class="pi"> ژیر  </p>
+  </div>
+
 </div>
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
 
- <div class="box">
-
-    <a href="en.html"> <img src="images/new.jpg" ></a> 
-    <p class="pi"> نیوتن </p>
-
-</div>
 </body>
 </html>
