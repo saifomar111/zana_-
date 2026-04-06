@@ -2,6 +2,7 @@ body {
   background-color: bisque;
   font-family: sans-serif;
   margin: 0;
+  padding: 0;
   transition: 0.3s;
 }
 
@@ -16,7 +17,7 @@ body.dark {
   text-align: center;
   font-size: 40px;
   background-color: rgb(151, 15, 15);
-  padding: 10px;
+  padding: 15px;
   color: antiquewhite;
 }
 
@@ -55,7 +56,7 @@ body.dark {
 
 #searchInput:focus {
   border-color: crimson;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 /* suggestion box */
@@ -67,7 +68,7 @@ body.dark {
   margin-top: 8px;
   overflow: hidden;
   z-index: 100;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* each suggestion */
@@ -106,13 +107,14 @@ body.dark {
   border-radius: 15px;
   border: 4px solid #7c0000;
   overflow: hidden;
-  transition: 0.4s;
+  transition: 0.3s;
+  will-change: transform;
 }
 
-/* hover */
+/* hover (lighter for performance) */
 .box:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 /* image */
@@ -122,7 +124,7 @@ body.dark {
 }
 
 .box img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* ===== OVERLAY FEATURE ===== */
@@ -137,12 +139,12 @@ body.dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 18px;
   opacity: 0;
   transition: 0.3s;
 }
@@ -151,12 +153,8 @@ body.dark {
   opacity: 1;
 }
 
-.img-wrapper img {
-  transition: 0.3s;
-}
-
 .img-wrapper:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* name */
@@ -210,8 +208,8 @@ body.dark {
 
 /* glowing effect */
 .ee:hover {
-  text-shadow: 0 0 7px red, 0 0 20px orange;
-  transform: scale(1.2);
+  text-shadow: 0 0 5px red;
+  transform: scale(1.1);
 }
 
 /* DARK MODE CARD */
@@ -227,6 +225,49 @@ body.dark .h {
 /* image inside page */
 .eno {
   width: 150px;
-  margin: 0px 0px 0px 500px;
+  margin: 20px auto;
+  display: block;
   border: 4px solid rgb(212, 144, 8);
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .he {
+    font-size: 28px;
+    padding: 15px;
+  }
+
+  .search-container {
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  #searchInput {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .img-container {
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .box {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .pi {
+    font-size: 20px;
+  }
+
+  .pp {
+    font-size: 16px;
+    padding: 15px;
+  }
 }
