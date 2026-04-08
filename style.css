@@ -322,3 +322,10 @@ body.dark .h {
   border-radius: 10px;
   font-size: 18px;
 }
+@media (max-width: 600px) {
+  .toggle-btn {
+    top: 10px !important;
+    right: 10px;
+    z-index: 9999;
+  }
+}
