@@ -19,15 +19,16 @@ body.dark {
   background-color: rgb(151, 15, 15);
   padding: 15px;
   color: antiquewhite;
+  font-family: rabar_037;
+  word-spacing: 4px;
 }
 
 /* toggle button */
 .toggle-btn {
   position: fixed;
-  top: 15px;
+  top: 150px;
   right: 15px;
   padding: 10px 15px;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
   background: black;
@@ -113,7 +114,7 @@ body.dark {
 
 /* hover (lighter for performance) */
 .box:hover {
-  transform: translateY(-5px) scale(1.02);
+ transform: translatey(-5px) scale(1.02);
   box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
@@ -162,14 +163,16 @@ body.dark {
   font-size: 24px;
   font-weight: bold;
   padding: 10px;
+  font-family: rabar_027;
 }
 
 /* headers */
 .h {
   text-align: center;
   font-size: 40px;
-  background-color: beige;
+  background-color: rgb(97, 97, 22);
   padding: 10px;
+  color: azure;
 }
 
 /* other page header */
@@ -270,4 +273,51 @@ body.dark .h {
     font-size: 16px;
     padding: 15px;
   }
+}
+/* ===== MODERN PARAGRAPH ===== */
+
+.modern {
+  
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+/* name */
+.name {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #7c0000;
+}
+
+/* section title */
+.section {
+  margin-top: 20px;
+  font-size: 22px;
+  color: crimson;
+}
+
+/* list */
+.list {
+  padding-right: 20px;
+}
+
+.list li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+/* highlight important words */
+.highlight {
+  color: #D72638;
+  font-weight: bold;
+}
+
+/* book box */
+.book {
+  margin-top: 20px;
+  padding: 10px;
+  background: #fff3cd;
+  border-radius: 10px;
+  font-size: 18px;
 }
