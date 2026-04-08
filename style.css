@@ -26,13 +26,14 @@ body.dark {
 /* toggle button */
 .toggle-btn {
   position: fixed;
-  top: 150px;
+  top: 15px;
   right: 15px;
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
   background: black;
   color: white;
+  z-index: 9999; 
 }
 
 /* ===== CENTER SEARCH ===== */
